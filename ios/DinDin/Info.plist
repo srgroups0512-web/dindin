@@ -40,6 +40,8 @@
 	<string>Allow Din Din to access location in the background so your selected safety circle can receive one fresh or last-known location after a missed check-in.</string>
 	<key>RCTNewArchEnabled</key>
 	<true/>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
