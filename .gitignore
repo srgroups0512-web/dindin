@@ -45,6 +45,11 @@ node_modules/
 server/.env
 npm-debug.log
 yarn-error.log
+*.key
+*.cer
+*.p12
+*.certSigningRequest
+*.mobileprovision
 
 # fastlane
 #
