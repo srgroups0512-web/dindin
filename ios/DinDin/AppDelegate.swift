@@ -19,7 +19,7 @@ private final class DinDinSafetyLocationReporter: NSObject, CLLocationManagerDel
   func configure(apiBaseUrl: String, token: String) {
     UserDefaults.standard.set(apiBaseUrl.trimmingCharacters(in: CharacterSet(charactersIn: "/")), forKey: "dindin.safety.api")
     UserDefaults.standard.set(token, forKey: "dindin.safety.token")
-    if CLLocationManager.authorizationStatus == .authorizedAlways {
+    if manager.authorizationStatus == .authorizedAlways {
       manager.startMonitoringSignificantLocationChanges()
     }
   }
@@ -31,7 +31,7 @@ private final class DinDinSafetyLocationReporter: NSObject, CLLocationManagerDel
   }
 
   func capture(completion: @escaping (UIBackgroundFetchResult) -> Void) {
-    guard CLLocationManager.authorizationStatus == .authorizedAlways else {
+    guard manager.authorizationStatus == .authorizedAlways else {
       completion(.noData)
       return
     }
