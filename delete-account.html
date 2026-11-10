@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f5ed" />
+    <meta name="description" content="Request deletion of your Din Din account and associated data." />
+    <title>Delete Your Account &mdash; Din Din</title>
+    <link rel="icon" href="assets/dindin-penguin.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="legal-page">
+    <header class="legal-header">
+      <a class="brand" href="index.html"><img src="assets/dindin-penguin.png" alt="" /><span>Din Din</span></a>
+      <a class="back-link" href="index.html">&larr; Back to website</a>
+    </header>
+    <main class="legal-main deletion-main">
+      <div class="legal-hero deletion-hero">
+        <div class="eyebrow"><span></span> Your account, your choice</div>
+        <h1>Delete your Din Din account</h1>
+        <p>Use this page if you cannot access the in-app deletion option. Submit the mobile number registered with Din Din so we can verify ownership and process your request.</p>
+      </div>
+
+      <div class="deletion-layout">
+        <section class="deletion-card" aria-labelledby="delete-form-title">
+          <h2 id="delete-form-title">Account-deletion request</h2>
+          <p>We may contact you using the details below to confirm that the account belongs to you.</p>
+          <form action="https://formsubmit.co/neocoin90@gmail.com" method="post" class="deletion-form">
+            <input type="hidden" name="_subject" value="Din Din account-deletion request" />
+            <input type="hidden" name="_next" value="https://dindin.info/deletion-request-received.html" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <label for="account-name">Full name</label>
+            <input id="account-name" name="Full name" type="text" autocomplete="name" minlength="2" maxlength="100" required />
+
+            <label for="account-phone">Registered mobile number</label>
+            <input id="account-phone" name="Registered mobile number" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98765 43210" minlength="10" maxlength="18" required />
+
+            <label for="reply-email">Email for confirmation</label>
+            <input id="reply-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+
+            <label for="request-note">Anything else? <span>(optional)</span></label>
+            <textarea id="request-note" name="Additional details" rows="4" maxlength="500" placeholder="Do not include passwords, OTPs, or payment information."></textarea>
+
+            <label class="form-consent">
+              <input type="checkbox" name="Deletion confirmation" value="I request permanent deletion of my Din Din account and associated data" required />
+              <span>I request permanent deletion of my Din Din account and associated data.</span>
+            </label>
+
+            <button type="submit" class="deletion-submit">Send deletion request <span>&rarr;</span></button>
+          </form>
+          <p class="form-help">Need help? Email <a href="mailto:neocoin90@gmail.com">neocoin90@gmail.com</a>.</p>
+        </section>
+
+        <aside class="deletion-info" aria-label="What account deletion means">
+          <div>
+            <h2>What will be deleted</h2>
+            <ul>
+              <li>Your Din Din account and profile</li>
+              <li>Circle and primary-contact records</li>
+              <li>Reminder schedules and response history</li>
+              <li>Saved safety location and push tokens</li>
+            </ul>
+          </div>
+          <div>
+            <h2>What may be retained</h2>
+            <p>Limited records may be retained where required for legal, security, fraud-prevention, accounting, or dispute purposes. Residual copies may remain in protected backups until their normal deletion cycle completes.</p>
+          </div>
+          <div class="deletion-warning">
+            <strong>Subscriptions are separate</strong>
+            <p>Deleting your Din Din account does not cancel a Google Play or App Store subscription. Cancel it through the applicable store.</p>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <footer class="legal-footer"><span>&copy; 2026 Din Din</span><span><a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms &amp; Conditions</a></span></footer>
+  </body>
+</html>

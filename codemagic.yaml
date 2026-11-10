@@ -1,0 +1,54 @@
+workflows:
+  react-native-ios:
+    name: DinDin iOS TestFlight
+    max_build_duration: 120
+    instance_type: mac_mini_m2
+
+    integrations:
+      app_store_connect: DinDin
+
+    environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: info.dindin.app
+
+      vars:
+        BUNDLE_ID: "info.dindin.app"
+        XCODE_WORKSPACE: "DinDin.xcworkspace"
+        XCODE_SCHEME: "DinDin"
+
+    scripts:
+      - name: Install npm dependencies
+        script: |
+          npm install
+
+      - name: Set up build number
+        script: |
+          cd ios
+          BUILD_NUM=${BUILD_NUMBER:-3}
+          agvtool new-version -all "$BUILD_NUM"
+
+      - name: Install CocoaPods dependencies
+        script: |
+          cd ios
+          pod install
+
+      - name: Set up iOS code signing
+        script: |
+          xcode-project use-profiles
+
+      - name: Build IPA
+        script: |
+          xcode-project build-ipa \
+            --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
+            --scheme "$XCODE_SCHEME"
+
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
+        

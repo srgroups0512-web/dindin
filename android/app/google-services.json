@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "262954630088",
+    "project_id": "din-din-a5224",
+    "storage_bucket": "din-din-a5224.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262954630088:android:887e1280b610b307141efd",
+        "android_client_info": {
+          "package_name": "info.dindin.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhth3su9-jSo4knTc16tD0vhZIhOhjG-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

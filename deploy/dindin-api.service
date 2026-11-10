@@ -1,0 +1,29 @@
+[Unit]
+Description=Din Din API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dindin
+Group=dindin
+WorkingDirectory=/opt/dindin-api
+EnvironmentFile=/etc/dindin-api.env
+EnvironmentFile=-/etc/dindin-otp.env
+EnvironmentFile=-/etc/dindin-firebase.env
+EnvironmentFile=-/etc/dindin-billing.env
+ExecStart=/usr/bin/node index.js
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target
